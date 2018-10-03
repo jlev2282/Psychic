@@ -26,7 +26,8 @@ body, html {
     width: 30vw;
     height: 30vh;
     margin: auto;
-    background-color: #f3f3f3;
+    background-color: darkblue;
+    border-radius: 5px;
 }
 
 .banner {
@@ -38,18 +39,11 @@ body, html {
 
 .blink_me {
     animation: blinker 5s linear infinite;
-
-
     /* font-family: 'Fredericka the Great', cursive; */
-
     /* font-family: 'Nanum Brush Script', cursive; */
     font-size: 40px;
-
     /* font-family: 'IM Fell English SC', serif; */
-
     font-family: 'Nosifer', cursive;
-
-  
 }
   
   @keyframes blinker {
