@@ -51,6 +51,12 @@ body, html {
     font-family: 'Nosifer', cursive;
     font-size: 30px;
 }
+
+.scoreboard {
+    margin-top: 5vh;
+    font-family: 'Nosifer', cursive;
+    font-size: 15px; 
+}
   
   @keyframes blinker {
     50% {
