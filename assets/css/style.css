@@ -28,3 +28,32 @@ body, html {
     margin: auto;
     background-color: #f3f3f3;
 }
+
+.banner {
+    position: fixed;
+    top: 17vh;
+    left: 0;
+    right: 20;  
+}
+
+.blink_me {
+    animation: blinker 5s linear infinite;
+
+
+    /* font-family: 'Fredericka the Great', cursive; */
+
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 40px;
+
+    /* font-family: 'IM Fell English SC', serif; */
+
+    font-family: 'Nosifer', cursive;
+
+  
+}
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
