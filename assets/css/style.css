@@ -45,6 +45,11 @@ body, html {
     /* font-family: 'IM Fell English SC', serif; */
     font-family: 'Nosifer', cursive;
 }
+
+.content {
+    font-family: 'Nosifer', cursive;
+    font-size: 30px;
+}
   
   @keyframes blinker {
     50% {

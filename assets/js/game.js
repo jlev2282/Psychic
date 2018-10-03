@@ -21,7 +21,19 @@ function pickWord(){
 
 //function that governs game play
 function gamePlay(word) {
+    //get length of word
     let wordLength = word.length;
+    //determine number of guesses user will have
     let guesses = Math.floor(wordLength / 2);
-    alert(guesses);
+
+    //set the dashes to wordlength and store in unguessed word
+    let word2Guess = [];
+    for (var i = 0; i < wordLength; i++) {
+        word2Guess.push("_");
+    }
+    //make a string with number of dashes in word
+    // word2Guess.join(" ");
+
+    //append string to 
+    document.getElementById("word").innerHTML = word2Guess;
 }
