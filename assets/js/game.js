@@ -1,5 +1,6 @@
 "use strict";
 const gameData = {
+    gameStarted: false,
     words: ["dark", "October", "pumpkin", "witch", "candy", "costume", "goblin", "frankenstein"],
     letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ],
     score: 0,
@@ -9,8 +10,14 @@ const gameData = {
 
 //function that starts game and picks random word
 function startGame(){
-    let word = pickWord();
-    gamePlay(word);
+    if (gameData.gameStarted === false) {
+        let word = pickWord();
+        gamePlay(word);
+        gameData.gameStarted = true;  
+    } else {
+        return false;
+    }
+    
 }
 
 //function that starts game
