@@ -52,7 +52,7 @@ function gamePlay(word) {
 }
 
 document.onkeyup = function(e){
-   if (gameData.gameStarted === true) {
+   if (gameData.gameStarted === true && gameData.guesses > 0) {
        let letter = String.fromCharCode(event.which).toLowerCase();
        if (gameData.letters.indexOf(letter) != -1) {
            passValidation(letter);
@@ -65,11 +65,25 @@ document.onkeyup = function(e){
 };
 
 function passValidation(letter) {
-    for (var i = 0; i < gameData.word.length; i++) {
-        if (letter == gameData.word[i]) {
-            gameData.word2Guess[i] = letter;
+    if (gameData.wordString.indexOf(letter) != -1) {
+        for (var i = 0; i < gameData.word.length; i++) {
+            if (letter == gameData.word[i]) {
+                gameData.word2Guess[i] = letter;
+            }
+        }  
+    } else {
+        gameData.guesses -= 1;
+        if (gameData.guesses > 0 ) {
+            alert("I'm sorry, guess again");  
+        } else {
+            alert("YOU LOSE!");
+            gameData.losses++;
+            gameData.gameStarted = false; 
         }
+        
     }
+    
     gameData.wordString = gameData.word2Guess.join(" ");
     document.getElementById("word").innerHTML = gameData.wordString;
+    document.getElementById("guesses").innerHTML = `Guesses: ${gameData.guesses}`;
 }
