@@ -32,8 +32,10 @@ function gamePlay(word) {
         word2Guess.push("_");
     }
     //make a string with number of dashes in word
-    // word2Guess.join(" ");
+    let wordString = word2Guess.join(" ");
 
     //append string to 
-    document.getElementById("word").innerHTML = word2Guess;
+    document.getElementById("word").innerHTML = wordString;
+    document.getElementById("banner").innerHTML= "PICK A LETTER";
+    document.getElementById("guesses").innerHTML = guesses + " guesses remain.";
 }
