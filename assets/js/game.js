@@ -37,11 +37,11 @@ function gamePlay(word) {
     gameData.guesses = Math.floor(wordLength / 2);
 
     //set the dashes to wordlength and store in unguessed word
-    for (var i = 0; i < gameData.wordLength; i++) {
+    for (var i = 0; i < wordLength; i++) {
         gameData.word2Guess.push("_");
     }
     //make a string with number of dashes in word
-    gameData.wordString = word2Guess.join(" ");
+    gameData.wordString = gameData.word2Guess.join(" ");
 
     //append string to 
     document.getElementById("word").innerHTML = gameData.wordString;
@@ -55,7 +55,7 @@ document.onkeyup = function(e){
    if (gameData.gameStarted === true) {
        let letter = String.fromCharCode(event.which).toLowerCase();
        if (gameData.letters.indexOf(letter) != -1) {
-           alert("you picked "+letter);
+           passValidation(letter);
        } else {
            alert("Please choose a valid letter");
        }
@@ -63,3 +63,13 @@ document.onkeyup = function(e){
         return false;
     }
 };
+
+function passValidation(letter) {
+    for (var i = 0; i < gameData.word.length; i++) {
+        if (letter == gameData.word[i]) {
+            gameData.word2Guess[i] = letter;
+        }
+    }
+    gameData.wordString = gameData.word2Guess.join(" ");
+    document.getElementById("word").innerHTML = gameData.wordString;
+}
